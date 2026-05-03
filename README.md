@@ -1,2 +1,2 @@
-# CSE321-Project-1-B-tree-
+# CSE321-Project1
 Project for B-tree implemention
