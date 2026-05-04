@@ -1,30 +1,15 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O2
+CXXFLAGS = -std=c++17 -O2 -Wall -Iinclude
+SRC = ./src
+TARGET = btree
 
-INCLUDE = -Iinclude/
-
-SRC_DIR = ./src
-OBJ_DIR = ./obj
-
-TARGET = main
-
-SRCS = $(notdir $(wildcard $(SRC_DIR)/*.cpp))
-
-OBJS = $(SRCS:.cpp=.o)
-OBJECTS = $(patsubst %.o,$(OBJ_DIR)/%.o,$(OBJS))
-DEPS = $(OBJECTS:.o=.d)
+SRCS = $(wildcard $(SRC)/*.cpp)
 
 all: $(TARGET)
 
-$(TARGET) : $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+$(TARGET): $(SRCS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
-	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@ -MD
-
-.PHONY: clean all
+.PHONY: clean
 clean:
-	rm -f $(OBJECTS) $(DEPS) $(TARGET)
-
--include $(DEPS)
+	rm -f $(TARGET)
