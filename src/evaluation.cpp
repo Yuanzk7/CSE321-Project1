@@ -1,13 +1,13 @@
 #include "evaluation.h"
 #include <iostream>
-#include <ostream>
+//#include <ostream>
 #include <chrono>
 #include <random>
 #include <algorithm>
 
 using namespace std;
 
-void evaluate_insertion(btree* tree, const vector<StudentRecord>& data,int type,bool printing, ostream& out) {
+void evaluate_insertion(btree* tree, const vector<StudentRecord>& data,int type,bool printing/*, ostream& out*/) {
     if(!printing){
         for(int i = 0; i < 100000; i++) {
             tree->insert(data[i].student_id, i); 
@@ -16,16 +16,16 @@ void evaluate_insertion(btree* tree, const vector<StudentRecord>& data,int type,
     }
     switch(type){
         case 1:
-            out << "--- [B-tree Insertion Evaluation] ---" << endl;
-            //cout << "--- [B-tree Insertion Evaluation] ---" << endl;
+            //out << "--- [B-tree Insertion Evaluation] ---" << endl;
+            cout << "--- [B-tree Insertion Evaluation] ---" << endl;
             break;
         case 2:
-            out << "--- [B+-tree Insertion Evaluation] ---" << endl;
-            //cout << "--- [B+-tree Insertion Evaluation] ---" << endl;
+            //out << "--- [B+-tree Insertion Evaluation] ---" << endl;
+            cout << "--- [B+-tree Insertion Evaluation] ---" << endl;
             break;
         case 3:
-            out << "--- [B*-tree Insertion Evaluation] ---" << endl;
-            //cout << "--- [B*-tree Insertion Evaluation] ---" << endl;
+            //out << "--- [B*-tree Insertion Evaluation] ---" << endl;
+            cout << "--- [B*-tree Insertion Evaluation] ---" << endl;
             break;
     }
     auto start = chrono::high_resolution_clock::now();
@@ -37,27 +37,27 @@ void evaluate_insertion(btree* tree, const vector<StudentRecord>& data,int type,
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double, milli> duration = end - start;
     
-    out << "Execution Time: " << duration.count() << " ms" << "\n";
-    // cout << "Execution Time: " << duration.count() << " ms" << "\n";
-    out << "Total Splits: " << tree->get_split_count() << "\n";
-    // cout << "Total Splits: " << tree->get_split_count() << "\n";
-    out << "Node Utilization: " << tree->get_node_utilization() << " %" << endl;
-    // cout << "Node Utilization: " << tree->get_node_utilization() << " %" << endl;
+    //out << "Execution Time: " << duration.count() << " ms" << "\n";
+    cout << "Execution Time: " << duration.count() << " ms" << "\n";
+    //out << "Total Splits: " << tree->get_split_count() << "\n";
+    cout << "Total Splits: " << tree->get_split_count() << "\n";
+    //out << "Node Utilization: " << tree->get_node_utilization() << " %" << endl;
+    cout << "Node Utilization: " << tree->get_node_utilization() << " %" << endl;
 }
 
-void evaluate_point_search(btree* tree, const vector<StudentRecord>& data, int num_queries,int type, ostream& out) {
+void evaluate_point_search(btree* tree, const vector<StudentRecord>& data, int num_queries,int type/*, std::ostream& out*/) {
     switch(type){
         case 1:
-            //cout << "--- [B-tree Point Search Evaluation] ---" << endl;
-            out << "--- [B-tree Point Search Evaluation] ---" << endl;
+            cout << "--- [B-tree Point Search Evaluation] ---" << endl;
+            //out << "--- [B-tree Point Search Evaluation] ---" << endl;
             break;
         case 2:
-            //cout << "--- [B+-tree Point Search Evaluation] ---" << endl;
-            out << "--- [B+-tree Point Search Evaluation] ---" << endl;
+            cout << "--- [B+-tree Point Search Evaluation] ---" << endl;
+            //out << "--- [B+-tree Point Search Evaluation] ---" << endl;
             break;
         case 3:
-            //cout << "--- [B*-tree Point Search Evaluation] ---" << endl;
-            out << "--- [B*-tree Point Search Evaluation] ---" << endl;
+            cout << "--- [B*-tree Point Search Evaluation] ---" << endl;
+            //out << "--- [B*-tree Point Search Evaluation] ---" << endl;
             break;
         default:
             return;
@@ -78,23 +78,23 @@ void evaluate_point_search(btree* tree, const vector<StudentRecord>& data, int n
     chrono::duration<double, micro> total_duration = end - start;
     double mean_time = total_duration.count() / num_queries;
 
-    //cout << "Mean Execution Time: " << mean_time << " ms" << endl;
-    out << "Mean Execution Time: " << mean_time << " us" << endl;
+    cout << "Mean Execution Time: " << mean_time << " ms" << endl;
+    //out << "Mean Execution Time: " << mean_time << " us" << endl;
 }
 
-void evaluate_range_query(btree* tree, const vector<StudentRecord>& data, long long low, long long high,int type, ostream& out) {
+void evaluate_range_query(btree* tree, const vector<StudentRecord>& data, long long low, long long high,int type/*, std::ostream& out*/) {
     switch(type){
         case 1:
-            //cout << "--- [B-tree Range Query Evaluation] ---" << endl;
-            out << "--- [B-tree Range Query Evaluation] ---" << endl;
+            cout << "--- [B-tree Range Query Evaluation] ---" << endl;
+            //out << "--- [B-tree Range Query Evaluation] ---" << endl;
             break;
         case 2:
-            //cout << "--- [B+-tree Range Query Evaluation] ---" << endl;
-            out << "--- [B+-tree Range Query Evaluation] ---" << endl;
+            cout << "--- [B+-tree Range Query Evaluation] ---" << endl;
+            //out << "--- [B+-tree Range Query Evaluation] ---" << endl;
             break;
         case 3:
-            //cout << "--- [B*-tree Range Query Evaluation] ---" << endl;
-            out << "--- [B*-tree Range Query Evaluation] ---" << endl;
+            cout << "--- [B*-tree Range Query Evaluation] ---" << endl;
+            //out << "--- [B*-tree Range Query Evaluation] ---" << endl;
             break;
         default:
             return;
@@ -118,29 +118,29 @@ void evaluate_range_query(btree* tree, const vector<StudentRecord>& data, long l
         }
     }
 
-    //cout << "Execution Time : " << duration.count() << " ms" << "\n";
-    out << "Execution Time : " << duration.count() << " ms" << "\n";
+    cout << "Execution Time : " << duration.count() << " ms" << "\n";
+    //out << "Execution Time : " << duration.count() << " ms" << "\n";
     if(male_count > 0) {
-        //cout << "Average GPA    : " << total_gpa / male_count << "\n";
-        out << "Average GPA    : " << total_gpa / male_count << "\n";
-        //cout << "Average Height : " << total_height / male_count << " cm" << endl;
-        out << "Average Height : " << total_height / male_count << " cm" << endl;
+        cout << "Average GPA    : " << total_gpa / male_count << "\n";
+        //out << "Average GPA    : " << total_gpa / male_count << "\n";
+        cout << "Average Height : " << total_height / male_count << " cm" << endl;
+        //out << "Average Height : " << total_height / male_count << " cm" << endl;
     }
 }
 
-void evaluate_deletion(btree* tree, const vector<StudentRecord>& data, int num_deletes, int type, ostream& out) {
+void evaluate_deletion(btree* tree, const vector<StudentRecord>& data, int num_deletes, int type/*, std::ostream& out*/) {
     switch(type){
         case 1:
-            //cout << "--- [B-tree Deletion Evaluation] ---" << endl;
-            out << "--- [B-tree Deletion Evaluation] ---" << endl;
+            cout << "--- [B-tree Deletion Evaluation] ---" << endl;
+            //out << "--- [B-tree Deletion Evaluation] ---" << endl;
             break;
         case 2:
-            //cout << "--- [B+-tree Deletion Evaluation] ---" << endl;
-            out << "--- [B+-tree Deletion Evaluation] ---" << endl;
+            cout << "--- [B+-tree Deletion Evaluation] ---" << endl;
+            //out << "--- [B+-tree Deletion Evaluation] ---" << endl;
             break;
         case 3:
-            //cout << "--- [B*-tree Deletion Evaluation] ---" << endl;
-            out << "--- [B*-tree Deletion Evaluation] ---" << endl;
+            cout << "--- [B*-tree Deletion Evaluation] ---" << endl;
+            //out << "--- [B*-tree Deletion Evaluation] ---" << endl;
             break;
         default:
             return;
@@ -167,8 +167,8 @@ void evaluate_deletion(btree* tree, const vector<StudentRecord>& data, int num_d
     
     chrono::duration<double, milli> duration = end - start;
 
-    //cout << "Execution Time : " << duration.count() << " ms" << endl;
-    out << "Execution Time : " << duration.count() << " ms" << endl;
+    cout << "Execution Time : " << duration.count() << " ms" << endl;
+    //out << "Execution Time : " << duration.count() << " ms" << endl;
 
     bool is_valid = true;
     for(long long key : keys_deletes){
@@ -178,11 +178,11 @@ void evaluate_deletion(btree* tree, const vector<StudentRecord>& data, int num_d
         }
     }
     if(is_valid){
-        //cout << "Structural integrity: Pass " << endl;
-        out << "Structural integrity: Pass " << endl;
+        cout << "Structural integrity: Pass " << endl;
+        //out << "Structural integrity: Pass " << endl;
     }
     else{
-        //cout << "Structural integrity: Fail " << endl;
-        out << "Structural integrity: Fail " << endl;
+        cout << "Structural integrity: Fail " << endl;
+        //out << "Structural integrity: Fail " << endl;
     }
 }
