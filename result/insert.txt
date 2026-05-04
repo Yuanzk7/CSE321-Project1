@@ -1,0 +1,51 @@
+==========================
+[ Order = 50 ]
+==========================
+--- [B-tree Insertion Evaluation] ---
+Execution Time: 11.8079 ms
+Total Splits: 2930
+Node Utilization: 69.5575 %
+
+--- [B+-tree Insertion Evaluation] ---
+Execution Time: 11.5818 ms
+Total Splits: 2905
+Node Utilization: 70.3774 %
+
+--- [B*-tree Insertion Evaluation] ---
+Execution Time: 14.4428 ms
+Total Splits: 2390
+Node Utilization: 85.2471 %
+==========================
+[ Order = 10 ]
+==========================
+--- [B-tree Insertion Evaluation] ---
+Execution Time: 12.2479 ms
+Total Splits: 16381
+Node Utilization: 67.8044 %
+
+--- [B+-tree Insertion Evaluation] ---
+Execution Time: 17.3379 ms
+Total Splits: 15460
+Node Utilization: 71.4876 %
+
+--- [B*-tree Insertion Evaluation] ---
+Execution Time: 23.7588 ms
+Total Splits: 13118
+Node Utilization: 84.6625 %
+==========================
+[ Order = 5 ]
+==========================
+--- [B-tree Insertion Evaluation] ---
+Execution Time: 39.8877 ms
+Total Splits: 36767
+Node Utilization: 67.9791 %
+
+--- [B+-tree Insertion Evaluation] ---
+Execution Time: 36.1104 ms
+Total Splits: 34290
+Node Utilization: 71.7002 %
+
+--- [B*-tree Insertion Evaluation] ---
+Execution Time: 35.589 ms
+Total Splits: 30128
+Node Utilization: 82.9573 %

@@ -1,0 +1,51 @@
+==========================
+[ Order = 50 ]
+==========================
+--- [B-tree Range Query Evaluation] ---
+Execution Time : 0.560007 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm
+
+--- [B+-tree Range Query Evaluation] ---
+Execution Time : 0.327223 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm
+
+--- [B*-tree Range Query Evaluation] ---
+Execution Time : 0.115815 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm
+==========================
+[ Order = 10 ]
+==========================
+--- [B-tree Range Query Evaluation] ---
+Execution Time : 1.07312 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm
+
+--- [B+-tree Range Query Evaluation] ---
+Execution Time : 0.621665 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm
+
+--- [B*-tree Range Query Evaluation] ---
+Execution Time : 0.721909 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm
+==========================
+[ Order = 5 ]
+==========================
+--- [B-tree Range Query Evaluation] ---
+Execution Time : 1.78914 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm
+
+--- [B+-tree Range Query Evaluation] ---
+Execution Time : 1.38634 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm
+
+--- [B*-tree Range Query Evaluation] ---
+Execution Time : 0.798473 ms
+Average GPA    : 3.28549
+Average Height : 174.022 cm

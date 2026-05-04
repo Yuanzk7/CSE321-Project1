@@ -1,0 +1,42 @@
+==========================
+[ Order = 50 ]
+==========================
+--- [B-tree Deletion Evaluation] ---
+Execution Time : 0.508941 ms
+Structural integrity: Pass 
+
+--- [B+-tree Deletion Evaluation] ---
+Execution Time : 0.510282 ms
+Structural integrity: Pass 
+
+--- [B*-tree Deletion Evaluation] ---
+Execution Time : 0.377516 ms
+Structural integrity: Pass 
+==========================
+[ Order = 10 ]
+==========================
+--- [B-tree Deletion Evaluation] ---
+Execution Time : 0.772141 ms
+Structural integrity: Pass 
+
+--- [B+-tree Deletion Evaluation] ---
+Execution Time : 0.662381 ms
+Structural integrity: Pass 
+
+--- [B*-tree Deletion Evaluation] ---
+Execution Time : 0.366132 ms
+Structural integrity: Pass 
+==========================
+[ Order = 5 ]
+==========================
+--- [B-tree Deletion Evaluation] ---
+Execution Time : 1.28693 ms
+Structural integrity: Pass 
+
+--- [B+-tree Deletion Evaluation] ---
+Execution Time : 1.13646 ms
+Structural integrity: Pass 
+
+--- [B*-tree Deletion Evaluation] ---
+Execution Time : 0.755979 ms
+Structural integrity: Pass 

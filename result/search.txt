@@ -1,0 +1,33 @@
+==========================
+[ Order = 50 ]
+==========================
+--- [B-tree Point Search Evaluation] ---
+Mean Execution Time: 0.16245 us
+
+--- [B+-tree Point Search Evaluation] ---
+Mean Execution Time: 0.16135 us
+
+--- [B*-tree Point Search Evaluation] ---
+Mean Execution Time: 0.131107 us
+==========================
+[ Order = 10 ]
+==========================
+--- [B-tree Point Search Evaluation] ---
+Mean Execution Time: 0.21904 us
+
+--- [B+-tree Point Search Evaluation] ---
+Mean Execution Time: 0.235033 us
+
+--- [B*-tree Point Search Evaluation] ---
+Mean Execution Time: 0.153539 us
+==========================
+[ Order = 5 ]
+==========================
+--- [B-tree Point Search Evaluation] ---
+Mean Execution Time: 0.396304 us
+
+--- [B+-tree Point Search Evaluation] ---
+Mean Execution Time: 0.416612 us
+
+--- [B*-tree Point Search Evaluation] ---
+Mean Execution Time: 0.309109 us
