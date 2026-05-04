@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -O2
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 
 INCLUDE = -Iinclude/
 

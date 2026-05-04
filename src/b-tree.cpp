@@ -82,7 +82,7 @@ void btree::insert(long long key,int rid) {
 
     b_node* curr = root;
     while(!curr->isleaf){ // 리프노드까지 내려가 삽입할 위치 탐색
-        int i=0;
+        int i = 0;
         while(i<curr->current_count && key >= curr->keys[i]) i++;
         curr = curr -> children[i];
     }
@@ -174,9 +174,9 @@ void btree::remove(long long key) {
     b_node* target = root;
     int i;
     int target_index;
-    int min_key = ((d+1)/2)-1; // underflow 조건 
+    int min_key = (d-1) / 2; // underflow 조건 
 
-    while(target!=nullptr){ // 삭제할 키가 있는 노드의 위치 탐색
+    while(target!=nullptr){ // 삭제할 key가 있는 노드의 위치 탐색
         i = 0;
         while(i < target->current_count && key > target->keys[i]) i++;
 
@@ -184,6 +184,8 @@ void btree::remove(long long key) {
         if(target->isleaf) return;
         target = target->children[i];
     }
+    if(target == nullptr) return;
+    
     if(!target->isleaf){ // 내부 노드인경우
         target = find_Successor(target,i);
         target_index = 0;

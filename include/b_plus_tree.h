@@ -15,4 +15,3 @@ class b_plus_tree : public btree{
         void remove(long long key) override;
         std::vector<int> range_query(long long start_key,long long end_key) override;
 };
-
