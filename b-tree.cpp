@@ -83,7 +83,7 @@ void btree::insert(long long key,int rid) {
     b_node* curr = root;
     while(!curr->isleaf){ // 리프노드까지 내려가 삽입할 위치 탐색
         int i=0;
-        while(i<curr->current_count && key > curr->keys[i]) i++;
+        while(i<curr->current_count && key >= curr->keys[i]) i++;
         curr = curr -> children[i];
     }
 
@@ -176,7 +176,7 @@ void btree::remove(long long key) {
     int target_index;
     int min_key = ((d+1)/2)-1; // underflow 조건 
 
-    while(target!=nullptr){ // 삭제할 노드의 위치 탐색
+    while(target!=nullptr){ // 삭제할 키가 있는 노드의 위치 탐색
         i = 0;
         while(i < target->current_count && key > target->keys[i]) i++;
 
@@ -216,7 +216,7 @@ void btree::remove(long long key) {
             borrow_Right(target,right,p,child_index);
             break;
         }
-        else{ // 두형제에게 모두 빌려올 수 없는경우
+        else{ // 두 형제에게 모두 빌려올 수 없는경우
             if(left!=nullptr){ // 왼쪽 형제랑 병합
                merge(left,target,p,child_index-1);
             }
@@ -228,9 +228,15 @@ void btree::remove(long long key) {
     }
     if(target == root && target->current_count == 0){ // target이 루트노드인데 빈 경우
         b_node* old_root = root;
-        root = old_root->children[0];
-        if(root!=nullptr){
-            root->parent = nullptr;
+        
+        if(old_root->isleaf){
+            root = nullptr;
+        }
+        else{
+            root = old_root->children[0];
+            if(root != nullptr){
+                root->parent = nullptr;
+            }
         }
         delete[] old_root->keys;
         delete[] old_root->rids;
