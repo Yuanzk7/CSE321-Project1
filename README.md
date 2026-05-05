@@ -9,13 +9,11 @@ This project implements and analyzes three tree-based index structures: B-tree, 
 - `Makefile`: Build code
 
 ## 🛠️ Environment
-**Language**: C++17
-
-**Compiler**: g++ (GCC)
-
-**Build Tool**: Make
-
-**Dataset**: data/student.csv (100,000 student records)
+* **OS:** Ubuntu 24.04.1 LTS
+* **Language:** C++17
+* **Compiler:** g++ (GCC)
+* **Build Tool:** Make
+* **Dataset:** `data/student.csv` (100,000 student records)
 
 ## 🔨 How to Compile
 To compile the source code and generate the executable named `btree`, run `Makefile`:
