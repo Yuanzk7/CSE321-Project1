@@ -69,17 +69,20 @@ void evaluate_point_search(btree* tree, const vector<StudentRecord>& data, int n
         search_keys.push_back(data[dis(gen)].student_id);
     }
 
-    auto start = chrono::high_resolution_clock::now();
-    for(long long key : search_keys) {
-        tree->search(key);
+    int num = 10; // 10번 반복
+    double total_mean_time = 0.0;
+    for(int i = 0;i < num; i++) {
+        auto start = chrono::high_resolution_clock::now();
+        for(long long key : search_keys) {
+            tree->search(key);
+        }
+        auto end = chrono::high_resolution_clock::now();
+        chrono::duration<double, micro> total_duration = end - start;
+        total_mean_time += total_duration.count() / num_queries;
     }
-    auto end = chrono::high_resolution_clock::now();
-    
-    chrono::duration<double, micro> total_duration = end - start;
-    double mean_time = total_duration.count() / num_queries;
 
     //cout << "Mean Execution Time: " << mean_time << " us" << endl;
-    out << "Mean Execution Time: " << mean_time << " us" << endl;
+    out << "Mean Execution Time: " << (total_mean_time / num) << " us" << endl;
 }
 
 void evaluate_range_query(btree* tree, const vector<StudentRecord>& data, long long low, long long high,int type, ostream& out) {
@@ -103,11 +106,17 @@ void evaluate_range_query(btree* tree, const vector<StudentRecord>& data, long l
     double total_gpa = 0;
     double total_height = 0;
     int male_count = 0;
+    int num = 10; // 10번 반복
+    double total_mean_time = 0.0;
 
-    auto start = chrono::high_resolution_clock::now();
-    result_rids = tree->range_query(low, high); 
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double, milli> duration = end - start;
+    for(int i = 0;i < num; i++) {
+        auto start = chrono::high_resolution_clock::now();
+        result_rids = tree->range_query(low, high); 
+        auto end = chrono::high_resolution_clock::now();
+
+        chrono::duration<double, milli> duration = end - start;
+        total_mean_time += duration.count();
+    }
 
     for(int rid : result_rids) {
         const auto& student = data[rid];
@@ -119,7 +128,7 @@ void evaluate_range_query(btree* tree, const vector<StudentRecord>& data, long l
     }
 
     //cout << "Execution Time : " << duration.count() << " ms" << "\n";
-    out << "Execution Time : " << duration.count() << " ms" << "\n";
+    out << "Execution Time : " << total_mean_time / num << " ms" << "\n";
     if(male_count > 0) {
         //cout << "Average GPA    : " << total_gpa / male_count << "\n";
         out << "Average GPA    : " << total_gpa / male_count << "\n";

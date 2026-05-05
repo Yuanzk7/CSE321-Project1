@@ -2,50 +2,50 @@
 [ Order = 50 ]
 ==========================
 --- [B-tree Range Query Evaluation] ---
-Execution Time : 0.560007 ms
+Execution Time : 0.145552 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
 
 --- [B+-tree Range Query Evaluation] ---
-Execution Time : 0.327223 ms
+Execution Time : 0.0885913 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
 
 --- [B*-tree Range Query Evaluation] ---
-Execution Time : 0.115815 ms
+Execution Time : 0.0805584 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
 ==========================
 [ Order = 10 ]
 ==========================
 --- [B-tree Range Query Evaluation] ---
-Execution Time : 1.07312 ms
+Execution Time : 0.270316 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
 
 --- [B+-tree Range Query Evaluation] ---
-Execution Time : 0.621665 ms
+Execution Time : 0.169868 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
 
 --- [B*-tree Range Query Evaluation] ---
-Execution Time : 0.721909 ms
+Execution Time : 0.148977 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
 ==========================
 [ Order = 5 ]
 ==========================
 --- [B-tree Range Query Evaluation] ---
-Execution Time : 1.78914 ms
+Execution Time : 0.566891 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
 
 --- [B+-tree Range Query Evaluation] ---
-Execution Time : 1.38634 ms
+Execution Time : 0.556665 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
 
 --- [B*-tree Range Query Evaluation] ---
-Execution Time : 0.798473 ms
+Execution Time : 0.383279 ms
 Average GPA    : 3.28549
 Average Height : 174.022 cm
