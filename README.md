@@ -7,7 +7,7 @@ This project implements and analyzes three tree-based index structures: B-tree, 
 - `data/`: Contains `student.csv`
 - `result/`: Directory where output files will be saved(`.txt`)
 - `Makefile`: Build code
-- 
+
 ## 🛠️ Environment
 **Language**: C++17
 
