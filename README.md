@@ -16,6 +16,11 @@ This project implements and analyzes three tree-based index structures: B-tree, 
 * **Dataset:** `data/student.csv` (100,000 student records)
 
 ## 🔨 How to Compile
+Before compiling, you should install g++ and make tool.
+```
+sudo apt update
+sudo apt install build-essential make -y
+```
 To compile the source code and generate the executable named `btree`, run `Makefile`:
 ```
 make
