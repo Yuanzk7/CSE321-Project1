@@ -22,6 +22,7 @@ make
 ```
 ## 🚀 How to Execute
 The results directly will be saved into the corresponding file in the `result/`.
+You can change the order in 'main.cpp'.
 - To evaluate Insertion
 ```
 ./btree insert
