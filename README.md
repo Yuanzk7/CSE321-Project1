@@ -43,3 +43,15 @@ You can change the order in 'main.cpp'.
 ./btree delete
 ```
 (Output saved to result/delete.txt)
+- To install valgrind in Linux
+```
+sudo apt update
+sudo apt install valgrind -y
+```
+- To evaluate cache misses
+```
+valgrind --tool=cachegrind --cache-sim=yes ./btree insert
+valgrind --tool=cachegrind --cache-sim=yes ./btree search
+valgrind --tool=cachegrind --cache-sim=yes ./btree range
+valgrind --tool=cachegrind --cache-sim=yes ./btree delete
+```
